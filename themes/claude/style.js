@@ -2605,3 +2605,10 @@ const Style = () => {
 }
 
 export { Style }
+/* 强制控制封面图高度 */
+.notion-cover,
+.claude-cover,
+[class*="cover"] {
+  min-height: 30vh !important;
+  max-height: 40vh !important;
+}
