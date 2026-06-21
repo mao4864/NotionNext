@@ -66,12 +66,12 @@ const Hero = props => {
           {siteInfo?.title || siteConfig('TITLE')}
         </div>
         {/* 站点欢迎语 */}
-        <div className='mt-4 text-xl md:text-2xl items-center text-center font-medium shadow-text'>
-          <span id='typed' />
-        </div>
+       <div className='mt-4 text-xl md:text-2xl items-center text-center font-medium shadow-text ml-8'>
+       <span id='typed' />
+       </div>
 
         {/* 首页导航大按钮 */}
-        <div className='mt-10'
+        <div className='mt-14'
         {siteConfig('HEXO_HOME_NAV_BUTTONS', null, CONFIG) && (
           <NavButtonGroup {...props} />
         )}
