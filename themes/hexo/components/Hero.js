@@ -63,12 +63,12 @@ const Hero = props => {
         className='w-full h-screen relative bg-black'>
         <div className='text-white absolute top-0 flex flex-col h-full items-center justify-start w-full pt-16'>
           {/* 站点标题 */}
-          <div className='mt-4 text-xl md:text-2xl items-center text-center font-medium shadow-text border-2 border-white/80 px-8 py-3 rounded-lg' style={{ transform: 'translateX(80px)' }}>
-          <span id='typed' />
+          <div className='font-black text-5xl md:text-6xl shadow-text'>
+            {siteInfo?.title || siteConfig('TITLE')}
           </div>
           {/* 站点欢迎语 */}
-          <div className='mt-4 text-xl md:text-2xl items-center text-center font-medium shadow-text border-2 border-white bg-white/5 backdrop-blur-sm px-6 py-2 rounded-lg' style={{ transform: 'translateX(80px)' }}>
-          <span id='typed' />
+          <div className='mt-4 text-xl md:text-2xl items-center text-center font-medium shadow-text' style={{ transform: 'translateX(80px)' }}>
+            <span id='typed' />
           </div>
 
           {/* 首页导航大按钮 */}
