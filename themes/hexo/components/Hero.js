@@ -56,46 +56,48 @@ const Hero = props => {
   }
 
   return (
-    <header
-      id='header'
-      style={{ zIndex: 1 }}
-      className='w-full h-screen relative bg-black'>
-      <div className='text-white absolute top-0 flex flex-col h-full items-center justify-start w-full pt-16'>
-        {/* 站点标题 */}
-        <div className='font-black text-5xl md:text-6xl shadow-text'>
-          {siteInfo?.title || siteConfig('TITLE')}
-        </div>
-        {/* 站点欢迎语 */}
-       <div className='mt-4 text-xl md:text-2xl items-center text-center font-medium shadow-text ml-8'>
-       <span id='typed' />
-       </div>
-
-        {/* 首页导航大按钮 */}
-        <div className='mt-14'
-        {siteConfig('HEXO_HOME_NAV_BUTTONS', null, CONFIG) && (
-          <NavButtonGroup {...props} />
-        )}
-        </div>
-
-        {/* 滚动按钮 */}
-        <div
-          onClick={scrollToWrapper}
-          className='z-10 cursor-pointer w-full text-center py-4 text-3xl absolute bottom-10 text-white'>
-          <div className='opacity-70 animate-bounce text-xs'>
-            {siteConfig('HEXO_SHOW_START_READING', null, CONFIG) &&
-              locale.COMMON.START_READING}
+    <>
+      <header
+        id='header'
+        style={{ zIndex: 1 }}
+        className='w-full h-screen relative bg-black'>
+        <div className='text-white absolute top-0 flex flex-col h-full items-center justify-start w-full pt-16'>
+          {/* 站点标题 */}
+          <div className='font-black text-5xl md:text-6xl shadow-text'>
+            {siteInfo?.title || siteConfig('TITLE')}
           </div>
-          <i className='opacity-70 animate-bounce fas fa-angle-down' />
-        </div>
-      </div>
+          {/* 站点欢迎语 */}
+          <div className='mt-4 text-xl md:text-2xl items-center text-center font-medium shadow-text ml-8'>
+            <span id='typed' />
+          </div>
 
-      <LazyImage
-        id='header-cover'
-        alt={siteInfo?.title}
-        src={siteInfo?.pageCover}
-        className={`header-cover w-full h-screen object-cover object-center ${siteConfig('HEXO_HOME_NAV_BACKGROUND_IMG_FIXED', null, CONFIG) ? 'fixed' : ''}`}
-      />
-    </header>
+          {/* 首页导航大按钮 */}
+          <div className='mt-10'>
+            {siteConfig('HEXO_HOME_NAV_BUTTONS', null, CONFIG) && (
+              <NavButtonGroup {...props} />
+            )}
+          </div>
+
+          {/* 滚动按钮 */}
+          <div
+            onClick={scrollToWrapper}
+            className='z-10 cursor-pointer w-full text-center py-4 text-3xl absolute bottom-10 text-white'>
+            <div className='opacity-70 animate-bounce text-xs'>
+              {siteConfig('HEXO_SHOW_START_READING', null, CONFIG) &&
+                locale.COMMON.START_READING}
+            </div>
+            <i className='opacity-70 animate-bounce fas fa-angle-down' />
+          </div>
+        </div>
+
+        <LazyImage
+          id='header-cover'
+          alt={siteInfo?.title}
+          src={siteInfo?.pageCover}
+          className={`header-cover w-full h-screen object-cover object-center ${siteConfig('HEXO_HOME_NAV_BACKGROUND_IMG_FIXED', null, CONFIG) ? 'fixed' : ''}`}
+        />
+      </header>
+    </>
   )
 }
 
