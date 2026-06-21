@@ -60,7 +60,7 @@ const Hero = props => {
       id='header'
       style={{ zIndex: 1 }}
       className='w-full h-screen relative bg-black'>
-      <div className='text-white absolute top-0 flex flex-col h-full items-center justify-start w-full pt-13'>
+      <div className='text-white absolute top-0 flex flex-col h-full items-center justify-start w-full pt-16'>
         {/* 站点标题 */}
         <div className='font-black text-5xl md:text-6xl shadow-text'>
           {siteInfo?.title || siteConfig('TITLE')}
