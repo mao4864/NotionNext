@@ -63,7 +63,7 @@ const Hero = props => {
         className='w-full h-screen relative bg-black'>
         <div className='text-white absolute top-0 flex flex-col h-full items-center justify-start w-full pt-16'>
           {/* 站点标题 */}
-          <<div className='mt-4 text-xl md:text-2xl items-center text-center font-medium shadow-text border-2 border-white/80 bg-black/20 px-8 py-3 rounded-lg' style={{ transform: 'translateX(80px)' }}>
+          <div className='mt-4 text-xl md:text-2xl items-center text-center font-medium shadow-text border-2 border-white/80 px-8 py-3 rounded-lg' style={{ transform: 'translateX(80px)' }}>
           <span id='typed' />
           </div>
           {/* 站点欢迎语 */}
