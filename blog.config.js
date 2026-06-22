@@ -1,7 +1,7 @@
 // 注：process.env.XX是Vercel的环境变量
 
 const config = {
-  NOTION_PAGE_ID: process.env.NOTION_PAGE_ID || '02ab3b8678004aa69e9e415905ef32a5',
+  NOTION_PAGE_ID: '8bce7b6d65558324a630012e3e45769b',
   THEME: process.env.NEXT_PUBLIC_THEME || 'hexo',
   LANG: process.env.NEXT_PUBLIC_LANG || 'zh-CN',
   SINCE: process.env.NEXT_PUBLIC_SINCE || 2021,
