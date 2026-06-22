@@ -60,7 +60,7 @@ const Hero = props => {
       id='header'
       style={{ zIndex: 1 }}
       className='w-full h-screen relative bg-black'>
-      <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full '>
+      <div className='text-white absolute top-0 flex flex-col h-full items-start justify-start w-full pt-24'>
         {/* 站点标题 */}
         <div className='font-black text-4xl md:text-5xl shadow-text'>
           {siteInfo?.title || siteConfig('TITLE')}
@@ -70,10 +70,12 @@ const Hero = props => {
           <span id='typed' />
         </div>
 
-        {/* 首页导航大按钮 */}
-        {siteConfig('HEXO_HOME_NAV_BUTTONS', null, CONFIG) && (
-          <NavButtonGroup {...props} />
-        )}
+        {/* 首页导航大按钮 - 自动沉底 */}
+        <div className='mt-auto w-full flex justify-center'>
+          {siteConfig('HEXO_HOME_NAV_BUTTONS', null, CONFIG) && (
+            <NavButtonGroup {...props} />
+          )}
+        </div>
 
         {/* 滚动按钮 */}
         <div
