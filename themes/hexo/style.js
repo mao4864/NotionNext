@@ -203,6 +203,38 @@ const Style = () => {
         );
       }
 
+      /* ===== 首页Hero文字位置优化（已调试确认） ===== */
+      
+      /* 1. Seaward 标题移到封面顶部，加粗加阴影 */
+      #theme-hexo .header-cover .font-black.text-4xl,
+      #theme-hexo .header-cover .font-black.text-5xl,
+      #theme-hexo .header-cover .shadow-text {
+        position: absolute !important;
+        top: 5% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 2.5rem !important;
+        z-index: 20 !important;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.4) !important;
+      }
+
+      /* 2. 欢迎/副标题移到右侧 + 背景框 */
+      #theme-hexo .header-cover .text-xs,
+      #theme-hexo .header-cover .text-light-400,
+      #theme-hexo .header-cover .pt-4 {
+        position: absolute !important;
+        right: 8% !important;
+        top: 30% !important;
+        background: rgba(0,0,0,0.6) !important;
+        color: #fff !important;
+        padding: 10px 20px !important;
+        border-radius: 10px !important;
+        font-size: 1.1rem !important;
+        font-weight: bold !important;
+        z-index: 20 !important;
+        white-space: nowrap !important;
+      }
+
       /* Custem */
       .tk-footer {
         opacity: 0;
@@ -236,3 +268,4 @@ const Style = () => {
 }
 
 export { Style }
+
