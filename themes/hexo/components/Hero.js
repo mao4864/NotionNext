@@ -70,10 +70,12 @@ const Hero = props => {
           <span id='typed' />
         </div>
 
-        {/* 首页导航大按钮 */}
-        {siteConfig('HEXO_HOME_NAV_BUTTONS', null, CONFIG) && (
-          <NavButtonGroup {...props} />
-        )}
+        {/* 首页导航大按钮 - 添加外层 div 微调位置 */}
+        <div className='mt-8'>
+          {siteConfig('HEXO_HOME_NAV_BUTTONS', null, CONFIG) && (
+            <NavButtonGroup {...props} />
+          )}
+        </div>
 
         {/* 滚动按钮 */}
         <div
