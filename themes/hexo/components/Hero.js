@@ -1,3 +1,4 @@
+
 // import Image from 'next/image'
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
@@ -60,7 +61,9 @@ const Hero = props => {
       id='header'
       style={{ zIndex: 1 }}
       className='w-full h-screen relative bg-black'>
-      <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full '>
+
+      {/* 文字区域 - 保留 flex 控制，文字位置不变 */}
+      <div className='text-white absolute top-0 flex flex-col h-full items-center justify-start w-full pt-24'>
         {/* 站点标题 */}
         <div className='font-black text-4xl md:text-5xl shadow-text'>
           {siteInfo?.title || siteConfig('TITLE')}
@@ -69,22 +72,24 @@ const Hero = props => {
         <div className='mt-2 h-12 items-center text-center font-medium shadow-text text-lg'>
           <span id='typed' />
         </div>
+      </div>
 
-        {/* 首页导航大按钮 */}
+      {/* 卡片区域 - 独立定位，不干扰文字 */}
+      <div className='absolute left-0 right-0 mx-auto text-center' style={{ bottom: '140px' }}>
         {siteConfig('HEXO_HOME_NAV_BUTTONS', null, CONFIG) && (
           <NavButtonGroup {...props} />
         )}
+      </div>
 
-        {/* 滚动按钮 */}
-        <div
-          onClick={scrollToWrapper}
-          className='z-10 cursor-pointer w-full text-center py-4 text-3xl absolute bottom-10 text-white'>
-          <div className='opacity-70 animate-bounce text-xs'>
-            {siteConfig('HEXO_SHOW_START_READING', null, CONFIG) &&
-              locale.COMMON.START_READING}
-          </div>
-          <i className='opacity-70 animate-bounce fas fa-angle-down' />
+      {/* 滚动按钮 */}
+      <div
+        onClick={scrollToWrapper}
+        className='z-10 cursor-pointer w-full text-center py-4 text-3xl absolute bottom-10 text-white'>
+        <div className='opacity-70 animate-bounce text-xs'>
+          {siteConfig('HEXO_SHOW_START_READING', null, CONFIG) &&
+            locale.COMMON.START_READING}
         </div>
+        <i className='opacity-70 animate-bounce fas fa-angle-down' />
       </div>
 
       <LazyImage
